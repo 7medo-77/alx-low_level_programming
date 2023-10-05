@@ -15,7 +15,7 @@ int main(void)
 
 	char *s = "and that piece of art is useful \" - Dora Korpar, 2015-10-19";
 
-	for (i = 0; s != '\0'; i++)
+	for (i = 0; *s != '\0'; i++)
 	{
 		j++;
 	}
