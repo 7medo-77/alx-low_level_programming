@@ -20,6 +20,6 @@ int main(void)
 		j++;
 	}
 
-	write(2, s, j);
+	j = write(STDERR_FILENO, s, j);
 	return (1);
 }
