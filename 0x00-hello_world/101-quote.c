@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * main: Entry point for the program 
+ * main - Entry point for the program 
  *
  * Description: A C program which write to the standard error
  *
@@ -11,5 +11,6 @@
 
 int main (void)
 {
-	fprintf(""
+	fprintf(stderr, "and that piece of art is useful \" - Dora Korpar, 2015-10-19");
+	return (0);
 }	
