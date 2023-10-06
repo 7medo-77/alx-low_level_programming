@@ -6,13 +6,13 @@
  *
  *Description: A C program which write to the standard error
  *
- *Return: always 0 (Success)
+ *Return: 1 (no success)
  */
 
 int main(void)
 {
 	char s[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
 
-	write(stderr, s, sizeof(s) / sizeof(char));
+	write(1, s, sizeof(s) / sizeof(char));
 	return (1);
 }
