@@ -20,7 +20,6 @@ int main(void)
 		j++;
 	}
 
-	j = write(STDERR_FILENO, s, j);
-	fprintf(stderr, "%s", s);
+	j = write(1, s, j);
 	return (1);
 }
