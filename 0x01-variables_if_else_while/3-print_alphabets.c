@@ -9,16 +9,14 @@
 
 int main(void)
 {
-	int i = 0;
 	char c = 'a';
 
-	while (i <= 52)
+	while (c <= 'Z')
 	{
-		if (i == 52)
-			putchar('\n');
-		else
+		if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		{
-			putchar(c++)
+			putchar(c++);
 		}
 	}
+	putchar('\n');
 }
