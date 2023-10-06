@@ -20,6 +20,6 @@ int main(void)
 		j++;
 	}
 
-	write(1, s, j);
+	write(1, s, 59);
 	return (1);
 }
