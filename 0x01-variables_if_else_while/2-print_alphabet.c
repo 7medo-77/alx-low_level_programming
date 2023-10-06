@@ -14,7 +14,10 @@ int main(void)
 	while (i <= 26)
 	{
 		if (i == 26)
+		{
 			putchar('\n');
+			i++;
+		}
 		else
 		{
 		putchar(j++);
