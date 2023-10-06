@@ -11,11 +11,8 @@
 
 int main(void)
 {
-	int i;
-
 	char s[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
 
-	write(1, s, sizeof(s) / sizeof(char));
-	i = write(stderr, s, sizeof(s) / sizeof(char));
+	write(2, s, sizeof(s) / sizeof(char));
 	return (1);
 }
