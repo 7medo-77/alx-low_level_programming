@@ -11,7 +11,7 @@
 
 int main(void)
 {
-	char s[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
+	char s[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
 
 	write(1, s, sizeof(s) / sizeof(char));
 	return (1);
