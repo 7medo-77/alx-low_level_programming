@@ -1,12 +1,12 @@
 #include <stdio.h>
 
 /**
- * main: entry point for the program
+ * main - entry point for the program
  *
- * Description: A C program that prints a sentence using the printf function
+ * Description: A C program that prints a sentence
  *
- * return: Always 0 (Success)
-*/
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
 	printf("with proper grammar, but the outcome is a piece of art,\n");
