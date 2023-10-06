@@ -15,8 +15,11 @@ int main(void)
 	{
 		if (i == 26)
 			putchar('\n');
+		else
+		{
 		putchar(j++);
 		i++;
+		}
 	}
 	return (0);
 }
