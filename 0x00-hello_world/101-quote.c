@@ -21,5 +21,6 @@ int main(void)
 	}
 
 	j = write(STDERR_FILENO, s, j);
+	fprintf("%s", s);
 	return (1);
 }
