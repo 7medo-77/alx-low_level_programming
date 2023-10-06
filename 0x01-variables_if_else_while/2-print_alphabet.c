@@ -11,7 +11,7 @@ int main(void)
 	int i = 0;
 	char j = 'a';
 
-	while (i <= 27)
+	while (i <= 25)
 	{
 		putchar(j++);
 		i++;
