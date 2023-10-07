@@ -13,6 +13,8 @@ int main(void)
 	while (d <= 'f')
 		if ((d >= '0' && d <= '9') || (d >= 'a' && d <= 'f'))
 			putchar(d++);
+		else
+			d++;
 	putchar('\n');
 	return (0);
 }
