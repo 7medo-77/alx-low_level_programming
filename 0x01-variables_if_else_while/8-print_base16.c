@@ -4,7 +4,7 @@
  *
  * Description: A C program printing all hex characters
  *
- * return: 0 (success)
+ * Return: 0 (success)
  */
 int main(void)
 {
