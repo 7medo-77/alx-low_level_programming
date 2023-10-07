@@ -11,8 +11,8 @@ int main(void)
 	char c = 'a';
 
 	while (c <= 'z')
-			putchar(c++);
-    c = 'A';
+		putchar(c++);
+	c = 'A';
 	while (c <= 'Z')
 	{
 		if (c >= 'A' && c <= 'Z')
