@@ -18,6 +18,8 @@ int main(void)
 	{
 		if (c >= 'a' && c <= 'z')
 			putchar(c++);
+		else
+			c++;
 	}
 
 	putchar('\n');
