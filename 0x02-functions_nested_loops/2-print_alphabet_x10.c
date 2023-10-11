@@ -1,13 +1,11 @@
 #include "main.h"
-
 /**
  * main - entry point to the program
- * 
+ *
  * Description: A C function prints _putchar
- * 
+ *
  * Return: always 0 (success)
  */
-
 void print_alphabet_x10(void)
 {
 	char c = 'a';
@@ -15,8 +13,11 @@ void print_alphabet_x10(void)
 
 	while (i <= 9)
 	{
-		for (;c >= 'a' && c <= 'z';)
+		for (; c >= 'a' && c <= 'z'; )
+		{
 			_putchar(c++);
+			_putchar('\n');
+		}
+		i++;
 	}
-	_putchar('\n');
 }
