@@ -4,6 +4,8 @@
 /**
  * _islower - checks for lowercase character
  *
+ * @number: A number entered
+ *
  * Return: 1 if c is lowercase or Returns 0 otherwise
  */
 
