@@ -1,21 +1,27 @@
+#include <stdio.h>
 #include "main.h"
+
 /**
- * print_alphabet_x10 - A C function prints _putchar
- *
- * Return: always 0 (success)
+ * print_alphabet_x10 - prints the english alphabet from a-z
+ * Return: Always 0 (Success)
+ * --------------------------
+ * Prototype: void print_alphabet(void);
+ * You can only use _putchar twice in your code
+ * --------------------------
  */
+
 void print_alphabet_x10(void)
 {
-	char c = 'a';
-	int i = 0;
+	char chart;
+	int number = 0;
 
-	while (i <= 9)
+	for (; number < 10; number++)
 	{
-		for (; c >= 'a' && c <= 'z'; )
+		for (chart = 'a'; chart <= 'z'; chart++)
 		{
-			_putchar(c++);
+			_putchar(chart);
 		}
 		_putchar('\n');
-		i++;
 	}
+
 }
