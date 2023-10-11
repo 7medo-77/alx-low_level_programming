@@ -6,35 +6,24 @@
  *
  * starting with 0.
  *
- * Return: the last digit of a number
- * --------------------------
- * If we list all the natural numbers below 10 that are multiples
- * of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is
- * 23. Write a program that computes and prints the sum of all the
- * multiples of 3 or 5 below 1024 (excluded), followed by a new line.
- * --------------------------
- * By Youssef Hassane
+ * Return: the last digit of a numberber
  */
 
 int main(void)
 {
-	int theLimit = 1024;
-	int theSum = 0;
-	int num;
+	int upper_bound = 1024;
+	int rolling_sum = 0;
+	int number;
 
-	/* Iterate through numbers from 0 to theLimit - 1 */
-	for (num = 0; num < theLimit; num++)
+	for (number = 0; number < upper_bound; number++)
 	{
-		/* Check if the current number is a multiple of 3 or 5 */
-		if (num % 3 == 0 || num % 5 == 0)
+		if (number % 3 == 0 || number % 5 == 0)
 		{
-			/* If it is, add it to the sum */
-			theSum += num;
+			rolling_sum += number;
 		}
 	}
 
-	/* Print the sum of all multiples of 3 or 5 below 1024 */
-	printf("%d\n", theSum);
+	printf("%d\n", rolling_sum);
 
 	return (0);
 }
