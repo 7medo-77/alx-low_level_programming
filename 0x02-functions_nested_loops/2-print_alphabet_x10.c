@@ -1,8 +1,6 @@
 #include "main.h"
 /**
- * main - entry point to the program
- *
- * Description: A C function prints _putchar
+ * print_alphabet_x10 - A C function prints _putchar
  *
  * Return: always 0 (success)
  */
