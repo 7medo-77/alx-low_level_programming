@@ -12,7 +12,7 @@ int main(void)
 
 	while (s[i] != '\0')
 	{
-		_putchar(i++);
+		_putchar(s[i++]);
 	}
 	_putchar('\n');
 	return (0);
