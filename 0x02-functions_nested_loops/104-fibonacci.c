@@ -10,20 +10,20 @@
  */
 int main(void)
 {
-	int 0_98fib(void);
-	0_98fib();
+	int fib_one_to_98(void);
+	fib_one_to_98();
 	return (0);
 }
 
 /**
- * 0_98fib - Write a program that prints the first
+ * fib_one_to_98 - Write a program that prints the first
  * 50 Fibonacci numbers,
  * starting with 0.
  *
  *
  * Return: the last digit of a number
  */
-int 0_98fib(void)
+int fib_one_to_98(void)
 {
 	/* Initialize variables */
 	int count;
