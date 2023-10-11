@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * main - entry point to the program
+ * print_alphabet - A function that prints all letters of the alphabet
  *
  * Description: A C function prints _putchar
  *
