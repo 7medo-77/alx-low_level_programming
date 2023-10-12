@@ -1,5 +1,13 @@
 #include <stdio.h>
 
+/**
+ * main - enty point for the program
+ *
+ * Description: A FizzBuzz program printing fizz, buzz and fizzbuzz
+ *
+ * Return: Always 0 (success)
+ */
+
 int main(void)
 {
 	int i;
@@ -8,12 +16,13 @@ int main(void)
 	while (i <= 100)
 	{
 		if (i % 15 == 0)
-			printf("FizzBuzz");
+			printf("FizzBuzz ", i++);
 		else if (i % 3 == 0)
-			printf("Fizz");
+			printf("Fizz ", i++);
 		else if (i % 5 == 0)
-			printf("Buzz");
+			printf("Buzz ", i++);
 		else
 			printf("%d ", i++);
 	}
+	return (0);
 }
