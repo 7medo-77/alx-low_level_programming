@@ -2,11 +2,10 @@
 #include <stdio.h>
 
 /**
- * function_name - A function name
+ * reset_to_98 - A function that changes the value of paramter to 98
  *
- * @c: Description for parameter name
+ * @n: Description for parameter name
  *
- * Return: Always 0 (success)
  */
 
 void reset_to_98(int *n)
