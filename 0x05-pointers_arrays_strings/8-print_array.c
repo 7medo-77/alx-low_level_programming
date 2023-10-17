@@ -6,7 +6,7 @@
  *
  * @n: A paramter which specifies the number of array elements to be printed
  *
- * @*a: The array within which n number of elements will be printed
+ * @a: The array within which n number of elements will be printed
  */
 void print_array(int *a, int n)
 {
