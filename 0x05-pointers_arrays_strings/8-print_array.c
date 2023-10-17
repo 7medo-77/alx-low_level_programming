@@ -10,11 +10,8 @@
  */
 void print_array(int *a, int n)
 {
-	int i, j;
+	int j;
 
-	i = 0;
-	while (a[i] != '0')
-		i++;
 	for (j = 0; j < n; j++)
 		printf("%d, ", a[j]);
 	putchar('\n');
