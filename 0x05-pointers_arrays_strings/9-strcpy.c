@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * _strcpy - A function that copies string
+ * *_strcpy - A function that copies string into another array
  *
  * @dest: Destination for copying
  *
