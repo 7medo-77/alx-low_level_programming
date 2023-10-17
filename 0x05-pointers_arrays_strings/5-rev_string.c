@@ -4,7 +4,7 @@
 /**
  * rev_string - A function that reverses a string
  *
- * @s: A string that is entered into the fucntion 
+ * @s: A string that is entered into the fucntion
  */
 void rev_string(char *s)
 {
@@ -15,7 +15,7 @@ void rev_string(char *s)
 		i++;
 
 	len = i - 1;
-	for (j = 0; j <= i / 2; j++)
+	for (j = 0; j <= (i - 1) / 2; j++)
 	{
 		char temp;
 
