@@ -7,6 +7,8 @@
  * @dest: Destination for copying
  *
  * @src: Array which is to be copied into the destination
+ *
+ * Return: a pointer to array dest
  */
 char *_strcpy(char *dest, char *src)
 {
