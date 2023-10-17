@@ -10,7 +10,7 @@
  */
 void print_array(int *a, int n)
 {
-	int i, j, length;
+	int i, j;
 
 	i = 0;
 	while (a[i] != '0')
