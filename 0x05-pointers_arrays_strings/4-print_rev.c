@@ -4,19 +4,19 @@
 /**
  * print_rev - A function that prints the string, but reversed
  *
- * @s: A string passed on to the function
+ * @string: A string passed on to the function
  */
-void print_rev(char *s)
+void print_rev(char *string)
 {
-	int i, length;
+	int len = 0;
+	int num;
 
-	i = 0;
-	while (*s)
-		i++;
-	length = i - 1;
-	for ( ; length >= 0; length--)
-	{
-		_putchar(s[length]);
-	}
+	while (string[len] != '\0')
+		len++;
+
+	num = len - 1;
+	for (; num >= 0; num--)
+		_putchar(string[num]);
+
 	_putchar('\n');
 }
