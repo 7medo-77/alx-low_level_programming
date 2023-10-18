@@ -29,22 +29,14 @@ int _strlen(char *c)
 char *_strcat(char *dest, char *src)
 {
 	char *concat;
-	int len_src, len_dest, len_cat, i, j;
+	int len_src, len_dest,  i, j;
+	j = 0;
 
-	len_src = _strlen(src);
 	len_dest = _strlen(dest);
-	len_cat = len_dest + len_src + 1;
 
-	for (i = 0; i <= len_cat; i++)
+	for (i = len_dest; src[j] != '\0'; i++)
 	{
-		if (i < len_dest - 1)
-			concat[i] = dest[i];
-		else if (i >= len_dest)
-			concat[i] = src[i - len_dest];
-		else if (i == len_cat)
-			concat[i] = '\0';
+		dest[i] = src[j++];
 	}
 	return (concat);
 }
-
-
