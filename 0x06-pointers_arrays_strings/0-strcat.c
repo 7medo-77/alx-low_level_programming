@@ -29,7 +29,7 @@ int _strlen(char *c)
 char *_strcat(char *dest, char *src)
 {
 	char *concat;
-	int len_src, len_dest,  i, j;
+	int  len_dest,  i, j;
 	j = 0;
 
 	len_dest = _strlen(dest);
@@ -38,5 +38,6 @@ char *_strcat(char *dest, char *src)
 	{
 		dest[i] = src[j++];
 	}
+	dest[i] = '\0';
 	return (concat);
 }
