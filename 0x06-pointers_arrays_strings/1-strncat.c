@@ -7,18 +7,25 @@
  * @dest: A parameter which src is added to
  * @n: Number of bytes from string src
  *
- * Return: A pionter to the concatenated array
+ * Return: Always 0 (success)
  */
 
 char *_strncat(char *dest, char *src, int n)
 {
-	int i, j;
+	int i, j, k;
 
 	i = 0;
 	while (dest[i] != '\0')
 		i++;
 
-	for (j = 0; j <= n; j++)
+	k = 0;
+	while (src[k] != '\0')
+		k++;
+
+	if (n > k)
+		n = k;
+
+	for (j = 0; j <= n && src[j] != '\0'; j++)
 	{
 		if (j == n)
 			dest[i] = '\0';
@@ -28,4 +35,3 @@ char *_strncat(char *dest, char *src, int n)
 	}
 	return (dest);
 }
-
