@@ -4,6 +4,8 @@
  * string_toupper - A function that capitalizes lowercase letters in a string
  *
  * @s: String which would be capitalized
+ *
+ * Return: A pointer to character array
  */
 char *string_toupper(char *s)
 {
