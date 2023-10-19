@@ -7,7 +7,7 @@
  * @dest: A parameter which src is added to
  * @n: Number of bytes from string src
  *
- * Return: Always 0 (success)
+ * Return: A pionter to the concatenated array
  */
 
 char *_strncat(char *dest, char *src, int n)
