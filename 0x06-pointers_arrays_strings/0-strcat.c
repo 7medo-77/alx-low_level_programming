@@ -1,24 +1,6 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * _strlen - A function that counts the number of elements in an array
- *
- * @c: A paramter array which is entered into the function
- *
- * Return: Integer which represents the number of elemnts in an array(success)
- *
- */
-int _strlen(char *c)
-{
-	int a;
-
-	a = 0;
-	while (c[a] != '\0')
-		a++;
-	return (a);
-}
-
-/**
  * function_name - A function that
  *
  * @dest: A paramter
@@ -28,16 +10,17 @@ int _strlen(char *c)
  */
 char *_strcat(char *dest, char *src)
 {
-	char *concat;
-	int  len_dest,  i, j;
-	j = 0;
+	int i, j;
 
-	len_dest = _strlen(dest);
+	i = 0;
+	while (dest[i] != '\0')
+		i++;
 
-	for (i = len_dest; src[j] != '\0'; i++)
+	for (j = 0; src[j] != '\0'; j++)
 	{
-		dest[i] = src[j++];
+		dest[i] = src[j];
+		i++;
 	}
 	dest[i] = '\0';
-	return (concat);
+	return (dest);
 }
