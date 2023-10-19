@@ -1,25 +1,6 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * _strlen - A function that counts the number of elements in an array
- *
- * @c: A paramter array which is entered into the function
- *
- * Return: Integer which represents the number of elemnts in an array(success)
- *
- */
-int _strlen(char *c)
-{
-	int a;
-
-	a = 0;
-	while (c[a] != '\0')
-		a++;
-	return (a);
-}
-
-
-/**
  * _strncat - A function that concatenates n bytes from src on to dest string
  *
  * @src: A paramter indicating string to be added on to dest
@@ -31,19 +12,20 @@ int _strlen(char *c)
 
 char *_strncat(char *dest, char *src, int n)
 {
-	int len_dest, len_concat, i;
-	char *res;
+	int i, j;
 
-	len_dest = _strlen(dest);
-	len_concat = len_dest + n;
+	i = 0;
+	while (dest[i] != '\0')
+		i++;
 
-	for (i = 0; i < len_concat; i++)
+	for (j = 0; j <= n; j++)
 	{
-		if (i < len_dest - 1)
-			res[i] = dest[i];
-		else if (i >= len_dest)
-			res[i] = src[i - len_dest];
+		if (j == n)
+			dest[i] = '\0';
+		else
+			dest[i] = src[j];
+		i++;
 	}
-	res[i] = '\0';
-	return (res);
+	return (dest);
 }
+
