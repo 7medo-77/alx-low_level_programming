@@ -1,10 +1,10 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * reverse_array - A function that
+ * reverse_array - A function that reverses a string
  *
- * @s1:
- * @s2:
+ * @a: String to be reversed
+ * @n: Length of string, including the null terminator
  *
  * Return: Always 0 (success)
  */
