@@ -5,8 +5,6 @@
  *
  * @a: String to be reversed
  * @n: Length of string, including the null terminator
- *
- * Return: Always 0 (success)
  */
 void reverse_array(int *a, int n)
 {
@@ -20,7 +18,7 @@ void reverse_array(int *a, int n)
 	for (i = 0; i < half; i++)
 	{
 		temp = a[i];
-		a[i] = a[len - i];
-		a[len - i] = temp;
+		a[i] = a[len - i - 1];
+		a[len - i - 1] = temp;
 	}
 }
