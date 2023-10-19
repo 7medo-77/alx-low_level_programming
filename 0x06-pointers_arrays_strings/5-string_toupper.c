@@ -16,6 +16,7 @@ char *string_toupper(char *s)
 			s[i] += 32;
 		else
 			i++;
+		i++;
 	}
 	return (s);
 }
