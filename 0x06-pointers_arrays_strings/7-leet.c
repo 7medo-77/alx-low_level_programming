@@ -1,9 +1,11 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * string_toupper - A function that capitalizes lowercase letters in a string
+ * leet - A function that encodes the letters AEOTL/aeotl with 1337 respectively
  *
- * @s: String which would be capitalized
+ * @string: String to be encoded
+ *
+ * Return: Pointer to the encoded string
  */
 char *leet(char *string)
 {
