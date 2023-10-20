@@ -5,7 +5,7 @@
  *
  * @string: String to be encoded
  *
- * Return: Pointer to the encoded string
+ * Return: Encoded string
  */
 char *leet(char *string)
 {
