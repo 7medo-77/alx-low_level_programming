@@ -10,7 +10,7 @@
  * Return: Pointer to character
  */
 
-char *_strpbrj(char *string, char *match)
+char *_strpbrk(char *string, char *match)
 {
 	int i, j;
 
