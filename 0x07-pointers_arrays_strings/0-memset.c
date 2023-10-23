@@ -4,10 +4,13 @@
 char *_memset(char *s, char b, unsigned int n)
 {
 	int i;
+	char **def;
+
+	*def = s;
 
 	for (i = 0; i < n; i++)
 	{
-		s[i] = b;
+		*def[i] = b;
 	}
 
 	return (s);
