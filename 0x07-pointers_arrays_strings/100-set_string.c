@@ -14,7 +14,7 @@ void set_string (char **s, char *to)
 	i = 0;
 	while (*to)
 	{
-		*s[i] = to[i];
+		*s + i = &to + i;
 		i++;
 	}
 }
