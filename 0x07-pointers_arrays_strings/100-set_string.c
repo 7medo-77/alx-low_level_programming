@@ -9,8 +9,12 @@
  */
 void set_string (char **s, char *to)
 {
-	char *temp;
+	int i;
 
-	*temp = *to;
-	*s = to;
+	i = 0;
+	while (*to)
+	{
+		*s[i] = to[i];
+		i++;
+	}
 }
