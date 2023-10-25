@@ -1,8 +1,10 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * _strlen_recursion - prints a string, in reverse, followed by a new line
- * @n: string to print
+ * factorial - prints factroial of number n;
+ * @n: number entered into the function
+ * Return: -1 if n is less than 0 (fail)
+ *			factorial of number if success
  */
 int factorial(int n)
 {
