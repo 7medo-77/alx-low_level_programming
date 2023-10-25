@@ -21,9 +21,10 @@ int square_check(int n, int i)
 /**
  * _sqrt_recursion - Finding square factor of a number
  * @n: number entered into function to check if it's a square number
+ * Return: Returns the square factor if number is square
+ *			Returns -1 (fail)
  */
 int _sqrt_recursion(int n)
 {
 	return (square_check(n, 1));
 }
-
