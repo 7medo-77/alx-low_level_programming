@@ -17,6 +17,7 @@ int is_palindrome(char *string)
 {
 	int length = strlen(string);
 	int result = palindrome_check(string, 0, length - 1);
+
 	return (result);
 }
 
@@ -33,6 +34,7 @@ int is_palindrome(char *string)
 int palindrome_check(char *s, int first, int last)
 {
 	int result;
+
 	if (first >= last)
 	{
 		return (1);
