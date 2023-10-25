@@ -4,7 +4,7 @@
 int prime_test(int n, int factor);
 
 /**
- * prime_test_number - Write a function that returns 1
+ * is_prime_number - Write a function that returns 1
  * if the input integer is a prime number, otherwise return 0.
  *
  * Return: Always 0 (Success)
@@ -12,7 +12,7 @@ int prime_test(int n, int factor);
  * @number: The number to be checked
  */
 
-int prime_test_number(int number)
+int is_prime_number(int number)
 {
 	if (number <= 1)
 	{
