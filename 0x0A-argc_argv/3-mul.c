@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 /**
  * main - Entry point for the program
@@ -20,9 +21,12 @@ int main(int argc, char const **argv)
 	}
 	else
 	{
-		res =
-		(*argv[1] < 0 ? *argv[1] * -1 : *argv[1])
-		* (*argv[2] < 0 ? *argv[2] * -1 : *argv[2]);
+		//a = (*argv[1] < 0 ? *argv[1] * -1 : *argv[1]);
+		//b = (*argv[2] < 0 ? *argv[2] * -1 : *argv[2]);
+
+		a = (atoi(argv[1])) < 0 ? atoi(argv[1]) * -1: atoi(argv[1]);
+		b = (atoi(argv[2])) < 0 ? atoi(argv[2]) * -1: atoi(argv[2]);
+		res = a * b;
 		printf("%d\n", res);
 		return (0);
 	}
