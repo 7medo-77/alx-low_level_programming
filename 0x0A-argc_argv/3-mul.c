@@ -20,11 +20,9 @@ int main(int argc, char const **argv)
 	}
 	else
 	{
-		a = *argv[1] < 0 ? *argv[1] * -1 : *argv[1];
-		b = *argv[2] < 0 ? *argv[2] * -1 : *argv[2];
-		
-
-		res = a * b;
+		res =
+		(*argv[1] < 0 ? *argv[1] * -1 : *argv[1])
+		* (*argv[2] < 0 ? *argv[2] * -1 : *argv[2]);
 		printf("%d\n", res);
 		return (0);
 	}
