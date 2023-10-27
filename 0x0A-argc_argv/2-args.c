@@ -12,6 +12,7 @@ int main(int argc, char const **argv)
 {
 	int a;
 
+	(void)argc;
 	a = 0;
 	while (a < argc)
 	{
