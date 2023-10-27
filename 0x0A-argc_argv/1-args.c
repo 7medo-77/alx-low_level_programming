@@ -10,5 +10,5 @@
  */
 int main(int argc, char const **argv)
 {
-	printf("%d", argc);
+	printf("%d", argc - 1);
 }
