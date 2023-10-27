@@ -28,7 +28,7 @@ int main(int argc, char const **argv)
 			if ((argv[i][j] < '0' || argv[i][j] > '9') && argv[i][j] != '-')
 			{
 				printf("%s\n", "Error");
-				return (-1);
+				return (1);
 			}
 		}
 		res += atoi(argv[i]);
