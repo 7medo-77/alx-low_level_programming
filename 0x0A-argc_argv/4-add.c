@@ -17,11 +17,9 @@ int main(int argc, char const **argv)
 	if (argc == 1)
 	{
 		printf("%d\n", 0);
-		return (1);
+		return (0);
 	}
 
-	(void)argc;
-	(void)argv;
 	res = 0;
 	i = 1;
 	j = 0;
