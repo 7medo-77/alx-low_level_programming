@@ -19,6 +19,9 @@ int main(int argc, char const **argv)
 		printf("%d\n", 0);
 		return (1);
 	}
+
+	(void)argc;
+	(void)argv;
 	res = 0;
 	i = 1;
 	j = 0;
@@ -28,7 +31,7 @@ int main(int argc, char const **argv)
 		{
 			if (!isdigit(argv[i][j]))
 			{
-				printf("%s\n", "Error");
+				printf("Error\n");
 				return (1);
 			}
 		}
