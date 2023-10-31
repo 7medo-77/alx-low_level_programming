@@ -21,6 +21,14 @@ char *str_concat(char *s1, char *s2)
 
 	cat = malloc(len_cat * sizeof(char) + 1);
 
+	if (cat == NULL)
+	{
+		return (NULL);
+	}
+
+	!s1 ? s1 = "" : s1;
+	!s2 ? s2 = "" : s2;
+
 	for (i = 0; i < len_cat; i++)
 	{
 		if (i >= len_s1)
