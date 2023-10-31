@@ -12,18 +12,30 @@ int str_len(char *string);
 
 int **alloc_grid(int width, int height)
 {
-	int i, j, **grid;
-
-	grid = malloc(height * sizeof(int *));
-	i = 0;
-	while (i < height)
+	if (width && height)
 	{
-		for (j = 0; j < width; j++)
+		int i, j, **grid;
+
+		grid = malloc(height * sizeof(int *));
+
+		if (grid == NULL)
 		{
-			grid[i] = malloc(width * sizeof(int));
-			grid[i][j] = '0';
+			free(grid);
+			return (NULL);
 		}
-		i++;
+
+		i = 0;
+		while (i < height)
+		{
+			for (j = 0; j < width; j++)
+			{
+				grid[i] = malloc(width * sizeof(int));
+				grid[i][j] = 0;
+			}
+			i++;
+		}
+		return (grid);
 	}
-	return (grid);
+	else
+		return (NULL);
 }
