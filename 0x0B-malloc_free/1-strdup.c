@@ -23,7 +23,7 @@ char *_strdup(char *str)
 	}
 	if (str == NULL)
 	{
-		free(sp);
+		//free(sp);
 		return (NULL);
 	}
 
