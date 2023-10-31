@@ -14,17 +14,17 @@ char *_strdup(char *str)
 	int i, len;
 	char *sp;
 
+	if (str == NULL)
+	{
+		return (NULL);
+	}
+
 	len = str_len(str);
 	sp = malloc(len * sizeof(char) + 1);
 
 	if (sp == NULL)
 	{
 		return (NULL);
-	}
-	if (str == NULL)
-	{
-		free(sp);
-		return (0);
 	}
 
 	i = 0;
