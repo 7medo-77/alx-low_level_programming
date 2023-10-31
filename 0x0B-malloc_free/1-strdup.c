@@ -4,7 +4,7 @@ int str_len(char *string);
 /**
  * _strdup - create a duplicate of the character array entered as a paramter
  *
- * @str - String entered as a parameter
+ * @str: String entered as a parameter
  *
  * Return: Pointer to char string
  */
@@ -40,7 +40,7 @@ char *_strdup(char *str)
 /**
  * str_len - create a duplicate of the character array entered as a paramter
  *
- * @string - String entered as a parameter
+ * @string: String entered as a parameter
  *
  * Return: Integer as length of the string
  */
