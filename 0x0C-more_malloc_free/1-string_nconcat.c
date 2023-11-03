@@ -27,10 +27,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	while (i < cat_length)
 	{
 		if (i < len_s1)
-		{
 			cat[i] = s1[i];
+		else
 			cat[i] = s2[i- len_s1];
-		}
+		i++;
+
 	}
 	cat[i] = '\0';
 	return (cat);
