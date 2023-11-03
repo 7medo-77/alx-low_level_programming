@@ -19,7 +19,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	unsigned int i = 0;
 	char *charP;
 
-	if (!nmemb || !size )
+	if (!nmemb || !size)
 	{
 		return (NULL);
 	}
