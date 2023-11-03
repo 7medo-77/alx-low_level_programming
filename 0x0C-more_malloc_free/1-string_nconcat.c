@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdlib.h>
+#include <stdio.h>
 int str_len(char *string);
 
 /**
@@ -27,7 +27,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	n >= len_s2 ? n = len_s2 : n;
 	cat_length = len_s1 + n;
 
-	cat = malloc(cat_length * 1 + 1);
+	cat = malloc(cat_length + 1);
 	if (cat == NULL)
 		return (NULL);
 
