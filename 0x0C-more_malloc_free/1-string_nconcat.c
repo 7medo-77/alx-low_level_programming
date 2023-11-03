@@ -16,6 +16,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	int len_s1, len_s2, i, cat_length;
 	char *cat;
 
+	if(!s1)
+		s1 = "";
+	if (!s2)
+		s2 = "";
+
 	len_s1 = str_len(s1);
 	len_s2 = str_len(s2);
 
@@ -23,6 +28,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	cat_length = len_s1 + n;
 
 	cat = malloc(cat_length * sizeof(char) + 1);
+	if (!cat)
+		return (NULL);
+
 	i = 0;
 	while (i < cat_length)
 	{
@@ -38,7 +46,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 }
 
 /**
- * str_len - allocates memory using malloc
+ * str_len - Gets length of string
  * @string: String to be counted
  *
  * Return: Length of string
