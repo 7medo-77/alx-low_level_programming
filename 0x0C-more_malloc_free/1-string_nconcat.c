@@ -5,7 +5,8 @@
 int str_len(char *string);
 
 /**
- * string_nconcat - allocates memory using malloc to a concatenated string from s1 and s2
+ * string_nconcat - allocates memory using malloc
+ *					to a concatenated string from s1 and s2
  *
  * @n: number of bytes to concate from s2 with s1
  * @s1: String to concate s2 with
@@ -18,7 +19,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int len_s1, len_s2, i, cat_length;
 	char *cat;
 
-	if(s1 == NULL)
+	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
@@ -39,7 +40,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		if (i < len_s1)
 			cat[i] = s1[i];
 		else
-			cat[i] = s2[i- len_s1];
+			cat[i] = s2[i - len_s1];
 		i++;
 
 	}
