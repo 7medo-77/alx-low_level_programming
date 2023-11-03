@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "main.h"
 
 /**
@@ -15,7 +16,6 @@
 
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	unsigned int i;
 	void *new_ptr;
 
 	if (new_size == old_size)
@@ -29,9 +29,9 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	new_ptr = malloc(new_size);
 	if (new_ptr != NULL)
 	{
+		memcpy(new_ptr, ptr, (new_size < old_size) ? new_size : old_size);
 		free(ptr);
-		ptr = new_ptr;
-		return (ptr);
+		return (new_ptr);
 	}
 	else
 	{
