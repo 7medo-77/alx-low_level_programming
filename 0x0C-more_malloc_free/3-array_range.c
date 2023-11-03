@@ -15,6 +15,7 @@ int *array_range(int min_num, int max_num)
 	int *mem_alloc;
 	int total_size;
 	int i = 0;
+
 	if (min_num > max_num)
 	{
 		return (NULL);
