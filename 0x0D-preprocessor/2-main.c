@@ -2,7 +2,9 @@
 #include <string.h>
 
 /**
- * Program printing the name of the file using a macro
+ * main - Entry point for the program
+ *
+ * Return: Always success (0)
  */
 
 int main(void)
