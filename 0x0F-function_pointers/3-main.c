@@ -15,21 +15,29 @@
 
 int main(int argc, char **argv)
 {
-	if (argc > 4)
+	if (argc != 4)
 	{
-		printf("Error");
-		return (0);
+		printf("Error\n");
+		exit(98);
 	}
-	int num1, num2, res;
+	int num1, num2, res = 0;
 
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[3]);
-	res = 0;
+	res = (*get_op_func(argv[2]))(num1, num2);
 
-	if (argv[2][0])
+	if ((argv[1] == 0 || argv[3] == 0) && argv[2][0] == '/')
 	{
-		res = (*get_op_func(argv[2]))(num1, num2);
-		printf("%d", res);
+		printf("Error\n");
+		exit(100);
 	}
+	if (res)
+		printf("%d", res);
+	else
+	{
+		printf("Error\n");
+		exit(99);
+	}
+
 	return (res);
 }
