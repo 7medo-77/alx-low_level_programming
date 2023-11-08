@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(100);
 	}
-	if (!funcP)
+	if (funcP == NULL)
 	{
 		printf("Error\n");
 		exit(99);
