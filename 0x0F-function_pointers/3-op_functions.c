@@ -1,4 +1,8 @@
 #include "3-calc.h"
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+
 /**
  * op_add - A function that adds two integers and returns the result
  *
