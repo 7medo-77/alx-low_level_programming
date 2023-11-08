@@ -25,6 +25,7 @@ int main(int argc, char **argv)
 	if (argv[2][0])
 	{
 		res = (*get_op_func(argv[2]))(num1, num2);
+		printf("%d", res);
 	}
 	return (res);
 }
