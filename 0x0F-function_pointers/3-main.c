@@ -13,7 +13,7 @@
  *			arguments passed as integers
  */
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
 	int num1, num2, res = 0;
 	int (*funcP)(int, int);
