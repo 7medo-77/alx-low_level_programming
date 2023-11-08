@@ -21,19 +21,19 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 	int num1, num2, res = 0;
+	int (*funcP)(int, int);
 
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[3]);
-	res = (*get_op_func(argv[2]))(num1, num2);
+	funcP = get_op_func(argv[2]);
+	res = funcP(num1, num2);
 
 	if ((argv[1] == 0 || argv[3] == 0) && argv[2][0] == '/')
 	{
 		printf("Error\n");
 		exit(100);
 	}
-	if (res)
-		printf("%d", res);
-	else
+	if (!funcP)
 	{
 		printf("Error\n");
 		exit(99);
