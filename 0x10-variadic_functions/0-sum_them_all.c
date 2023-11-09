@@ -3,7 +3,7 @@
 
 int sum_them_all(const unsigned int n, ...)
 {
-	int i, rsum;
+	unsigned int i, rsum;
 	va_list ap;
 
 	rsum = 0;
