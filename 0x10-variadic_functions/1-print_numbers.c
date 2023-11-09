@@ -1,6 +1,7 @@
 #include "variadic_functions.h"
 /**
- * print_numbers - A functoin that prints all the numbers passed to it
+ * print_numbers - A functoin that prints all
+ *					the numbers passed to it
  *
  * @n: number of arguments
  * @separator: Delimiter between characters
@@ -20,11 +21,13 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	{
 		if (i == (n - 1))
 		{
-			printf("%d\n", va_arg(ap, int));
+			printf("%d", va_arg(ap, int));
+			break;
 		}
 		else
 			printf("%d%s", va_arg(ap, int), *separator ? separator : "");
 		i++;
 	}
+	printf("\n");
 	va_end(ap);
 }
