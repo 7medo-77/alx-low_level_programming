@@ -20,8 +20,8 @@ int main(int argc, char *argv[])
 
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[3]);
+
 	funcP = get_op_func(argv[2]);
-	res = funcP(num1, num2);
 
 	if (argc != 4)
 	{
@@ -34,6 +34,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(99);
 	}
+	res = funcP(num1, num2);
 	printf("%d\n", res);
 
 	return (0);
