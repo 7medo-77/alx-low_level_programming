@@ -12,6 +12,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	unsigned int i;
 	va_list ap;
+	const char *sep = separator;
 
 	va_start(ap, n);
 
@@ -24,7 +25,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 			break;
 		}
 		else
-			printf("%d%s", va_arg(ap, int), *separator ? separator : "");
+			printf("%d%s", va_arg(ap, int), *sep ? sep : "");
 		i++;
 	}
 	printf("\n");
