@@ -1,6 +1,14 @@
 #include "variadic_functions.h"
 #include <stdarg.h>
 
+/**
+ * sum_them_all - A function that sums all arguments passed to it
+ *
+ * @n: number of arguments
+ *
+ * Return: Sum of all arguments
+ */
+
 int sum_them_all(const unsigned int n, ...)
 {
 	unsigned int i, rsum;
