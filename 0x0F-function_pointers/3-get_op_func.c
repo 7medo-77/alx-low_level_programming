@@ -8,7 +8,7 @@
  *
  * @s: character signifying the sign of the mathematical operation
  *
- * Return: Integer
+ * Return: A pointer to function or NULL if it fails
  */
 int (*get_op_func(char *s))(int, int)
 {
