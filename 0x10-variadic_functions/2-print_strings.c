@@ -24,11 +24,11 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		string = va_arg(ap, char*);
 		if (i == (n - 1))
 		{
-			printf("%s\n", *string ? string : "(nil)");
-			break;
+			printf("%s", *string ? string : "(nil)");
 		}
 		printf("%s%s", *string ? string : "(nil)", sep);
 		i++;
 	}
+	printf("\n");
 	va_end(ap);
 }
