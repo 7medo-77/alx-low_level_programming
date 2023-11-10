@@ -1,6 +1,6 @@
 #include "variadic_functions.h"
 /**
- * print_numbers - A functoin that prints all the numbers passed to it
+ * print_strings - A function that prints all the numbers passed to it
  *
  * @n: number of arguments
  * @separator: Delimiter between characters
@@ -12,7 +12,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 {
 	unsigned int i;
 	va_list ap;
-	const char *sep = (separator != NULL) ? separator : "";
+	const char *sep = (separator != NULL) ? separator : "(nil)";
 
 	char *integer;
 
