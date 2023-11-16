@@ -12,12 +12,14 @@ int _strlen(const char *s);
 size_t print_list(const list_t *h)
 {
 	size_t i = 0;
+	unsigned int len;
 
 	while (h != NULL)
 	{
-		i++;
-		printf("[%d] %s\n", _strlen(h->str), h->str ? h->str : "(nil)");
+		len = (h->str) ? h->len : 0;
+		printf("[%u] %s\n", len, (h->str) ? h->str : "(nil)");
 		h = h->next;
+		i++;
 	}
 	return (i);
 }
