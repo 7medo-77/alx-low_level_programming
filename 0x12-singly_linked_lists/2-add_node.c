@@ -1,4 +1,6 @@
 #include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include "lists.h"
 unsigned int _strlen(const char *str);
 /**
