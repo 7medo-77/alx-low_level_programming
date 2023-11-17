@@ -13,22 +13,16 @@ unsigned int _strlen(const char *str);
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t **probe, *new;
+	list_t *probe, *new;
 	unsigned int len;
-	(void) **probe;
 
-	*probe = *head;
-	while ((*probe)->next != NULL)
-	{
-		*probe = (*probe)->next;
-	}
+	probe = *head;
 
 	new = malloc(sizeof(list_t));
 	if (!new)
 	{
 		return (NULL);
 	}
-
 	len = _strlen(str);
 	new->str = malloc(sizeof(char) * len) ?
 		malloc(sizeof(char) * len) : NULL;
@@ -36,10 +30,16 @@ list_t *add_node_end(list_t **head, const char *str)
 	new->str = strdup(str);
 	new->len = len;
 
-	(*probe)->next = new;
+	if (probe == NULL)
+		*head = new;
+	else
+	{
+		while (probe->next)
+			probe = (probe)->next;
+		(probe)->next = new;
+	}
 	new->next = NULL;
 	return (new);
-
 }
 /**
  * _strlen - A function that prints the number of nodes in a linked list
