@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "lists.h"
-void _constructor(void) __attribute__ ((constructor));
+void Print_Before_The_Main_Function(void) __attribute__ ((constructor));
 /**
  * Print_Before_The_Main_Function - Function that prints a
  * sentence before entry point of the program (main)
