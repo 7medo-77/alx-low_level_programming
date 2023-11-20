@@ -1,4 +1,4 @@
-#include "main.h"
+#include "lists.h"
 /**
  * print_listint - A function that prints the number of nodes in a linked list
  *
@@ -13,6 +13,7 @@ size_t print_listint(const listint_t *h)
 	while (h)
 	{
 		num++;
+		printf("%d\n", h->n);
 		h = h->next;
 	}
 	return (num);
