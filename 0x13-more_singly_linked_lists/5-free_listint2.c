@@ -11,6 +11,7 @@ void free_listint2(listint_t **head)
 	if (*head)
 	{
 		probe = *head;
+		*head = NULL;
 		while (probe != NULL)
 		{
 			temp = probe;
@@ -18,9 +19,4 @@ void free_listint2(listint_t **head)
 			free(temp);
 		}
 	}
-	else
-	{
-		*head = NULL;
-	}
-	*head = NULL;
 }
