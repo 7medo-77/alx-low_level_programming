@@ -12,7 +12,10 @@ int pop_listint(listint_t **head)
 	int content;
 
 	if (!head)
+	{
 		return (0);
+		(void)content;
+	}
 	else if (head)
 	{
 		temp = *head;
