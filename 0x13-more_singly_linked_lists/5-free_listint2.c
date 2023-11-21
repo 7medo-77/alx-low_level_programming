@@ -6,8 +6,9 @@
  */
 void free_listint2(listint_t **head)
 {
-	listint_t *temp, *probe;
+	listint_t *temp, *probe, *null;
 
+	null = NULL;
 	if (*head)
 	{
 		probe = *head;
@@ -17,7 +18,7 @@ void free_listint2(listint_t **head)
 			probe = probe->next;
 			free(temp);
 		}
-		*head = NULL;
+		*head = null;
 	}
 	else
 	{
