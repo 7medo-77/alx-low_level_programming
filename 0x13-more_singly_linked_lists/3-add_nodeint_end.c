@@ -13,6 +13,8 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 	listint_t *probe, *new;
 
 	new = malloc(sizeof(listint_t));
+	if (!new)
+		return (NULL);
 	new->n = n;
 	probe = *head;
 
@@ -24,9 +26,8 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 	else
 	{
 		while (probe->next)
-		{
 			probe = probe->next;
-		}
+
 		probe->next = new;
 		new->next = NULL;
 	}
