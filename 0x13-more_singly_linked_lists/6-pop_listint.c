@@ -13,7 +13,6 @@ int pop_listint(listint_t **head)
 
 	if (!head)
 	{
-		(void)content;
 		return (0);
 	}
 	else
