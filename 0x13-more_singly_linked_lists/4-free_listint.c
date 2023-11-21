@@ -1,11 +1,8 @@
 #include "lists.h"
 /**
- * free_listint - A function that prints the number
- *					 of nodes in a linked list
+ * free_listint - A function that frees a linked list
  *
  * @head: pointer to pointer to linked list struct
- *
- * Return: new node of struct type listint_t
  */
 void free_listint(listint_t *head)
 {
@@ -14,7 +11,7 @@ void free_listint(listint_t *head)
 	while (head != NULL)
 	{
 		temp = head;
-		free(temp);
 		head = head->next;
+		free(temp);
 	}
 }
