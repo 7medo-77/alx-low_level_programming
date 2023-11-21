@@ -11,13 +11,16 @@ void free_listint2(listint_t **head)
 	if (*head)
 	{
 		probe = *head;
-		free(*head);
-		*head = NULL;
 		while (probe != NULL)
 		{
 			temp = probe;
 			probe = probe->next;
 			free(temp);
 		}
+		*head = NULL;
+	}
+	else
+	{
+		return;
 	}
 }
