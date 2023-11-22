@@ -25,7 +25,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 
 	if (!head)
 		return (NULL);
-	while (probe->next != NULL)
+	while (probe != NULL)
 	{
 		if (i == idx && idx == 0)
 		{
@@ -39,13 +39,13 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 			probe->next = new;
 			break;
 		}
-		else
-		{
-			probe->next = new;
-			new->next = NULL;
-		}
 		probe = probe->next;
 		i++;
+	}
+	if (probe->next == NULL && i == idx)
+	{
+		probe->next = new;
+		new->next = NULL;
 	}
 	return (new);
 
