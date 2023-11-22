@@ -22,15 +22,15 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	probe = *head;
 	while (probe != NULL)
 	{
-		if (i == n - 1)
+		if (i == idx - 1)
 		{
 			probe->next = new;
 		}
-		else if (i == n + 1)
+		else if (i == idx + 1)
 		{
 			new->next = probe;
 		}
-		else if (n == 0)
+		else if (idx == 0)
 		{
 			new->next = *head;
 			*head = new;
