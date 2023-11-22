@@ -14,14 +14,14 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	listint_t *new, *probe;
 
 	new = malloc(sizeof(listint_t));
-	new->n = n;
-	probe = *head;
-	probe->next = (*head)->next;
-	probe->n = (*head)->n;
 	if (!head || !new)
 	{
 		return (NULL);
 	}
+	new->n = n;
+	probe = *head;
+	probe->next = (*head)->next;
+	probe->n = (*head)->n;
 	while (probe != NULL)
 	{
 		if (i == idx && idx == 0)
