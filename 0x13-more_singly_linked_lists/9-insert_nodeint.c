@@ -20,6 +20,8 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	}
 	new->n = n;
 	probe = *head;
+	probe->next = (*head)->next;
+	probe->n = (*head)->n;
 	while (probe != NULL)
 	{
 		if (i == idx - 1)
