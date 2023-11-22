@@ -37,6 +37,12 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		{
 			new->next = probe->next;
 			probe->next = new;
+			break;
+		}
+		else
+		{
+			probe->next = new;
+			new->next = NULL;
 		}
 		probe = probe->next;
 		i++;
@@ -44,3 +50,4 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	return (new);
 
 }
+
