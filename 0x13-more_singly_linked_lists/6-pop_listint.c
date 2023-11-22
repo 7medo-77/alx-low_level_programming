@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * pop_listint - A function that frees a linked list
+ * pop_listint - A function that removes the head of a linked list
  *
  * @head: Address of pointer to linked list struct
  *

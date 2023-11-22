@@ -1,6 +1,7 @@
 #include "lists.h"
 /**
- * sum_listint - A function that frees a linked list
+ * sum_listint - A function that sums all the
+ *				 contents of nodes in a linked list
  *
  * @head: Address of pointer to linked list struct
  *

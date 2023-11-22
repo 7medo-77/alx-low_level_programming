@@ -1,6 +1,7 @@
 #include "lists.h"
 /**
- * get_nodeint_at_index - A function that frees a linked list
+ * get_nodeint_at_index - A function that returns the value inside
+ *						  node of index index in a linked list
  *
  * @head: Address of pointer to linked list struct
  * @index: Index of the node in the linked list

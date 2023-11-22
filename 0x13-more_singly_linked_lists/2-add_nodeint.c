@@ -1,6 +1,7 @@
 #include "lists.h"
 /**
- * add_nodeint - A function that prints the number of nodes in a linked list
+ * add_nodeint - A function that adds new node
+ *				 at the beginning of a linked list
  *
  * @n: Content of the node
  * @head: pointer to pointer to linked list struct
