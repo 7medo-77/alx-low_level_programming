@@ -15,7 +15,7 @@ unsigned int binary_to_uint(const char *b)
 	while (i >= 0)
 	{
 		num = b[i] - '0';
-		if ((num != 0 && num != 1) || b[i] == '\0')
+		if ((num != 0 && num != 1) || !b)
 			return (0);
 		if (num == 1)
 			res += num * power_of(2, j);
