@@ -1,8 +1,6 @@
 #include "main.h"
-int _strlen(const char *string);
-int power_of(int num, int exponent);
 /**
- * binary_to_uint - A function that converts binary character string to integer
+ * binary_to_uint - Convert binary array to integer
  *
  * @b: character string coprised of binary number
  *
@@ -10,16 +8,60 @@ int power_of(int num, int exponent);
  */
 unsigned int binary_to_uint(const char *b)
 {
-	int i;
-	unsigned int res = 0;
+	int i, j = 0;
+	unsigned int res = 0, num = 0;
 
-	i = 0;
-	while (i <= _strlen(b))
+	i = _strlen(b) - 1;
+	while (i >= 0)
 	{
-		if ((b[i] - '0') == 1)
-			res += (b[i] - '0') * power_of(2, i);
-		else
-			continue;
+		num = b[i] - '0';
+		if (num != 0 && num != 1)
+			return (0);
+		if (num == 1)
+			res += num * power_of(2, j);
+		i--;
+		j++;
 	}
 	return (res);
 }
+
+/**
+ * _strlen - A function that gets length of string
+ *
+ * @string: character array
+ *
+ * Return: Length of string
+ */
+int _strlen(const char *string)
+{
+	int i = 0;
+
+	while (string[i])
+		i++;
+	return (i);
+}
+
+
+/**
+ * power_of - A function that raises num to the power of exponent
+ *
+ * @num: Number raise the power of
+ * @exponent: exponent
+ *
+ * Return: the number raised to the power n
+ */
+int power_of(int num, int exponent)
+{
+	int res = 1, i = 0;
+
+	while (i <= exponent)
+	{
+		if (i == 0)
+			res *= 1;
+		else
+			res *= num;
+		i++;
+	}
+	return (res);
+}
+
