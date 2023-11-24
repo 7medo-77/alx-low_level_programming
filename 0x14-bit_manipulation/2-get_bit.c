@@ -9,21 +9,10 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned long int mask;
-	int count = 63;
+	int bit;
 
-	mask = 1L;
-	while (count >= 0)
-	{
-		if (count == index)
-		{
-			if (n & mask)
-				return (1);
-			else if ((n & mask) == '0')
-				return (0);
-		}
-		mask <<= 1;
-		count--;
-	}
-	return (-1);
+	bit = (n >> index);
+	if (index > 32)
+		return (-1);
+	return (bit & 1);
 }
