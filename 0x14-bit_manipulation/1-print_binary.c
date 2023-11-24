@@ -8,15 +8,21 @@
  */
 void print_binary(unsigned long int n)
 {
-	int itr = 63;
-	unsigned long int j;
+	int index, counter = 0;
+	unsigned long int current;
 
-	j = 0b1000000000000000000000000000000000000000000000000000000000000000;
-
-	while (itr >= 0)
+	for (index = 63; index >= 0; index--)
 	{
-		_putchar(n & j ? '1' : '0');
-		j >>= 1;
-		itr--;
+		current = n >> index;
+
+		if (current & 1)
+		{
+			_putchar('1');
+			counter++;
+		}
+		else if (counter)
+			_putchar('0');
 	}
+	if (!counter)
+		_putchar('0');
 }
