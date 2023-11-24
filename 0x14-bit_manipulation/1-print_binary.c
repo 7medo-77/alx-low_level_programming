@@ -15,7 +15,7 @@ void print_binary(unsigned long int n)
 
 	while (itr >= 0)
 	{
-		printf("%d", n & j ? 1 : 0);
+		_putchar(n & j ? '1' : '0');
 		j >>= 1;
 		itr--;
 	}
