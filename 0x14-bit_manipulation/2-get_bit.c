@@ -10,20 +10,20 @@
 int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned long int mask;
-	int count = 0;
+	int count = 63;
 
-	mask = 0b1000000000000000000000000000000000000000000000000000000000000000;
-	while (count < 64)
+	mask = 1L;
+	while (count >= 0)
 	{
 		if (count == index)
 		{
-			if ((n & mask) != '0')
+			if (n & mask)
 				return (1);
-			if ((n & mask) == '0')
+			else if ((n & mask) == '0')
 				return (0);
 		}
-		mask >>= 1;
-		count++;
+		mask <<= 1;
+		count--;
 	}
 	return (-1);
 }
