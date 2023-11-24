@@ -1,5 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
+#include <stdio.h>
 
 int _strlen(const char *string);
 int power_of(int num, int exponent);
