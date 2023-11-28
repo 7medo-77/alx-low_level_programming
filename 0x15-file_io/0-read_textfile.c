@@ -1,24 +1,47 @@
 #include "main.h"
-#include "stdio.h"
+
 /**
- * read_textfile - Function to read from file and print to stdout
+ * read_textfile - Read from a file and print to stdout
  *
- * @filename: File to be opened
- * @letters: Number of letters to be read
+ * @filename: Name of the file
+ * @letters: the number of letters to read
  *
- * Return:
+ * Return: Number of letters read
  */
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-		FILE *file_1;
-		char buffer[letters + 1];
-		ssize_t out_put;
+	int fd;
+	int i, y;
+	char *buf;
 
-		file_1 = fopen(filename, "r");
-		while (fgets(buffer, letters + 1, file_1) != 0)
-		{
-				out_put = fwrite(buffer, sizeof(char), 1024, stdout);
-		}
-		return (out_put);
+	if (!filename)
+		return (0);
+	fd = open(filename, O_RDONLY);
+
+	if (fd < 0)
+		return (0);
+	buf = malloc(sizeof(char) * letters);
+
+	if (!buf)
+		return (0);
+	i = read(fd, buf, letters);
+
+	if (i < 0)
+	{
+		free(buf);
+		return (0);
+	}
+
+	buf[i] = '\0';
+	close(fd);
+	y = write(STDOUT_FILENO, buf, i);
+
+	if (y < 0)
+	{
+		free(buf);
+		return (0);
+	}
+	free(buf);
+	return (y);
 }
