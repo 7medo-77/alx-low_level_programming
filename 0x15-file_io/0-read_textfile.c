@@ -11,37 +11,37 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd;
-	int i, y;
-	char *buf;
+	int file_descriptor;
+	int index, index_2;
+	char *buffer_arr;
 
 	if (!filename)
 		return (0);
-	fd = open(filename, O_RDONLY);
+	file_descriptor = open(filename, O_RDONLY);
 
-	if (fd < 0)
+	if (file_descriptor < 0)
 		return (0);
-	buf = malloc(sizeof(char) * letters);
+	buffer_arr = malloc(sizeof(char) * letters);
 
-	if (!buf)
+	if (!buffer_arr)
 		return (0);
-	i = read(fd, buf, letters);
+	index = read(file_descriptor, buffer_arr, letters);
 
-	if (i < 0)
+	if (index < 0)
 	{
-		free(buf);
+		free(buffer_arr);
 		return (0);
 	}
 
-	buf[i] = '\0';
-	close(fd);
-	y = write(STDOUT_FILENO, buf, i);
+	buffer_arr[index] = '\0';
+	close(file_descriptor);
+	index_2 = write(STDOUT_FILENO, buffer_arr, index);
 
-	if (y < 0)
+	if (index_2 < 0)
 	{
-		free(buf);
+		free(buffer_arr);
 		return (0);
 	}
-	free(buf);
-	return (y);
+	free(buffer_arr);
+	return (index_2);
 }
