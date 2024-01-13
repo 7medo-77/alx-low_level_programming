@@ -14,6 +14,7 @@ int sum_dlistint(dlistint_t *head)
 	while (probe)
 	{
 		rolling_sum += probe->n;
+		probe = probe->next;
 	}
 	return (rolling_sum);
 }
