@@ -10,10 +10,7 @@
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
 	dlistint_t *probe = head;
-	int test_index = 0;
-
-	if (!head)
-		return (NULL);
+	unsigned int test_index = 0;
 
 	while (probe)
 	{
