@@ -7,34 +7,7 @@
  *
  * Return: Pointer to the newly created node
  */
-dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
-{
-	dlistint_t *probe = *head, *new;
-
-	new = malloc(sizeof(dlistint_t));
-	if (!new)
-		return (NULL);
-	if (!head)
-		return (NULL);
-
-	new->n = n;
-	new->next = NULL;
-
-	if (!*head)
-	{
-		new->prev = NULL;
-		*head = new;
-	}
-	else
-	{
-		while (probe->next)
-			probe = probe->next;
-		probe->next = new;
-		new->prev = probe;
-		probe = new;
-	}
-	return (new);
-}
+dlistint_t *add_dnodeint_end(dlistint_t **head, const int n);
 
 /**
  * add_dnodeint - Adds a node at the beginning of a doubly linked list
@@ -44,31 +17,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
  *
  * Return: Pointer to the newly created node
  */
-dlistint_t *add_dnodeint(dlistint_t **head, const int n)
-{
-	dlistint_t *new;
-
-	new = malloc(sizeof(dlistint_t));
-	if (!new)
-		return (NULL);
-
-	new->n = n;
-	if (!*head)
-	{
-		new->prev = NULL;
-		(*new).next = NULL;
-		*head = new;
-	}
-	else
-	{
-		(*head)->prev = new;
-		(*new).next = *head;
-		new->prev = NULL;
-		*head = new;
-	}
-
-	return (new);
-}
+dlistint_t *add_dnodeint(dlistint_t **head, const int n);
 
 /**
  * insert_dnodeint_at_index - Returns pointer to the node added
