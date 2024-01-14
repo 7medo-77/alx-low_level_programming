@@ -36,20 +36,24 @@ bool is_palindrome(char *string)
 }
 
 void *palindrome_calc(void)
-{   
+{
     int a = 1, b = 1, res, max_palindrome = 0;
-    static char *string_pal;
+    char *string_pal;
 
-    while (a <= 999, b <= 999)
+    while (a <= 999)
     {
-        res = a * b;
-        string_pal = int_to_string(res);
+        b = 1;
+        while (b <= 999)
+        {
+            res = a * b;
+            string_pal = int_to_string(res);
+            if (is_palindrome(string_pal) && res > max_palindrome)
+                max_palindrome = res;
+            b++;
+        }
         a++;
-        b++;
-        if (is_palindrome(string_pal) && res > max_palindrome)
-            max_palindrome = res;
     }
-    printf("%d\n", max_palindrome);
+    printf("%s\n%d\n%d\n", string_pal, res, max_palindrome);
 }
 
 int main(void)
