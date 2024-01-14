@@ -53,7 +53,7 @@ void *palindrome_calc(void)
         }
         a++;
     }
-    printf("%d\n", max_palindrome);
+    printf("%s\n", int_to_string(max_palindrome));
 }
 
 int main(void)
