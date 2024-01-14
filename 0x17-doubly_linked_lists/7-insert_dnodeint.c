@@ -1,55 +1,46 @@
 #include "lists.h"
-
 /**
- * insert_dnodeint_at_index - Add node at nth index
+ * insert_dnodeint_at_index - Returns pointer to the node added 
+ *							  at index idx in doubly linked list
  *
- * @h: Head of node
+ * @head: pointer to first node in doubly linked list
+ * @idx: index of the list node to be inserted
+ * @n: integer content of the node
  *
- * @idx: index
- *
- * @n: struct int
- *
- * Return: dlistint_t
+ * Return: Pointer to node added at index idx in doubly linked list
  */
-
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *new_node = malloc(sizeof(dlistint_t));
-	dlistint_t *current;
-	unsigned int count = 0;
+	dlistint_t *probe = *h, *new;
+	unsigned int index_test = 0;
 
-	if (h == NULL || new_node == NULL)
-	{
+	new = malloc(sizeof(dlistint_t));
+	if (!new)
 		return (NULL);
-	}
-	new_node->n = n;
-	new_node->next = NULL;
-	new_node->prev = NULL;
-	current = *h;
+	new->n = n;
 
-	if (idx == 0)
+	while (probe)
 	{
-		new_node = add_dnodeint(h, n);
-		return (new_node);
-	}
-	while (current)
-	{
-		if (current->next == NULL && count == idx - 1)
+		if (index_test == idx)
 		{
-			new_node = add_dnodeint_end(h, n);
-			return (new_node);
+			if (probe->next == NULL)
+				return(add_dnodeint_end(h, n));
+			else if (idx == 0)
+				return(add_dnodeint(h, n));
+			else
+			{
+				new->next = probe;
+				new->prev = probe->prev;
+				(probe->prev)->next = new;
+				probe->prev = new;
+			}
+			return (new);
 		}
-		else if ((idx - 1) == count)
+		else 
 		{
-			new_node->next = current->next;
-			new_node->prev = current;
-			current->next->prev = new_node;
-			current->next = new_node;
-			return (new_node);
+			probe = probe->next;
+			index_test++;
 		}
-		count++;
-		current = current->next;
 	}
-	free(new_node);
 	return (NULL);
 }
