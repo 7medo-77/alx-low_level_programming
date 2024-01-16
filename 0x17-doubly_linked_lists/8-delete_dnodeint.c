@@ -1,55 +1,56 @@
 #include "lists.h"
-
 /**
- * delete_dnodeint_at_index - Delete node at nth index
+ * delete_dnodeint_at_index - Returns pointer to the node added
+ *							  at index idx in doubly linked list
  *
- * @head: Head of node
+ * @h: pointer to first node in doubly linked list
+ * @index: index of the list node to be inserted
  *
- * @index: index
- *
- * Return: 1 succeed, -1 if fail
+ * Return: 1 on success
+ *		  -1 on failure
  */
-
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	dlistint_t *node;
-	unsigned int count;
+	dlistint_t *probe = *head, *temp;
+	int index_probe = 0;
 
-	if (*head == NULL)
-		return (-1);
-
-	node = *head;
-	if (index == 0)
+	while (probe)
 	{
-		*head = node->next;
-		if (node->next != NULL)
+		if (index_probe == index)
 		{
-			node->next->prev = NULL;
-		}
-		free(node);
-		return (1);
-	}
-	for (count = 0; node != NULL && count < index - 1 ; count++)
-	{
-		node = node->next;
-	}
-	if (node == NULL || node->next == NULL)
-	{
-		return (-1);
-	}
+			if (index_probe == 0)
+			{
+				temp = probe;
+				probe->next->prev = NULL;
+				probe = probe->next;
+				free(temp);
 
-	if (node->next->next != NULL)
-	{
-		node->next = node->next->next;
-		free(node->next->prev);
-		node->next->prev = node;
-		return (1);
-	}
-	else
-	{
-		free(node->next);
-		node->next = NULL;
-		return (1);
+			}
+			else if (probe->next == NULL)
+			{
+				temp = probe;
+				probe->prev->next = NULL;
+				probe = probe->next;
+				free(temp);
+			}
+			else
+			{
+				temp = probe;
+				probe->prev->next = probe->next;
+				probe->next->prev = probe->prev;
+				probe = probe->next;
+				free(temp);
+			}
+			return (1);
+
+		}
+		else
+		{
+			probe = probe->next;
+			index_probe++;
+		}
+
 	}
 	return (-1);
 }
+
