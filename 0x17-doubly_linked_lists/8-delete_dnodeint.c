@@ -3,7 +3,7 @@
  * delete_dnodeint_at_index - Returns pointer to the node added
  *							  at index idx in doubly linked list
  *
- * @h: pointer to first node in doubly linked list
+ * @head: pointer to first node in doubly linked list
  * @index: index of the list node to be inserted
  *
  * Return: 1 on success
@@ -13,6 +13,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
 	dlistint_t *probe = *head, *temp;
 	unsigned int index_probe = 0;
+
 	if (!head)
 		return (-1);
 	while (probe)
@@ -39,8 +40,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 				temp = probe;
 				probe->prev->next = probe->next;
 				probe->next->prev = probe->prev;
-				probe = probe->next;
-				free(temp);
+				probe = probe->next, free(temp);
 			}
 			return (1);
 		}
@@ -52,4 +52,3 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	}
 	return (-1);
 }
-
