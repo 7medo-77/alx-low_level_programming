@@ -75,7 +75,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		probe = ht->array[index_key];
 		while (probe)
 		{
-			if (strcmp(probe->value, value) == 0 && strcmp(probe->key, key))
+			if (strcmp(probe->value, value) == 0 && strcmp(probe->key, key) == 0)
 			{
 				free(node->key);
 				free(node->value);
