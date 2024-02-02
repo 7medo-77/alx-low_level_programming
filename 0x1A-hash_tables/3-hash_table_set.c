@@ -56,14 +56,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	node->value = malloc(sizeof(char) * str_len(value) + 1);
 	node->key = malloc(sizeof(char) * str_len(key) + 1);
 
-	if (key == NULL || !ht || !node || !node->value || !node->key)
+	if (strcmp(key, "") == 0 || !ht || !node || !node->value || !node->key)
 	{
-		node->value ? free(node->value) : NULL;
-		node->key ? free(node->key) : NULL;
-		node ? free(node) : NULL;
+		free(node->value);
+		free(node->key);
+		free(node);
 		return (0);
 	}
-
 	node->value = str_cpy(node->value, value);
 	node->key = str_cpy(node->key, key);
 	if (!ht->array[index_key])
