@@ -68,8 +68,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	else
 	{
-		node->next = ht->array[index_key]->next;
-		ht->array[index_key]->next = node;
+		node->next = ht->array[index_key];
+		ht->array[index_key] = node;
 	}
 	return (1);
 }
