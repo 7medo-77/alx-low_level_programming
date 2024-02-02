@@ -17,7 +17,8 @@ int main(void)
 	{
 		if (ht->array[index])
 		{
-			printf("%lu -> %s\n", index, ht->array[index]->value);
+			printf("%lu -> %s | %s\n", index,
+				  ht->array[index]->value, ht->array[index]->key);
 		}
 		else
 			continue;

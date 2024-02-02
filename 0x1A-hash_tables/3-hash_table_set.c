@@ -54,11 +54,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	node = malloc(sizeof(hash_node_t));
 	node->value = malloc(sizeof(char) * str_len(value) + 1);
+	node->key = malloc(sizeof(char) * str_len(key) + 1);
 
-	if (!key || !ht || !node || !node->value)
+	if (!key || !ht || !node || !node->value || !node->key)
 		return (0);
 
 	node->value = str_cpy(node->value, value);
+	node->key = str_cpy(node->key, key);
 	if (!ht->array[index_key])
 	{
 		ht->array[index_key] = node;
