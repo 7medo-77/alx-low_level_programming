@@ -50,14 +50,19 @@ char *str_cpy(char *dest, const char *key)
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index_key = key_index((unsigned char *)key, ht->size);
-	hash_node_t *node;
+	hash_node_t *node, *probe;
 
 	node = malloc(sizeof(hash_node_t));
 	node->value = malloc(sizeof(char) * str_len(value) + 1);
 	node->key = malloc(sizeof(char) * str_len(key) + 1);
 
 	if (!key || !ht || !node || !node->value || !node->key)
+	{
+		node->value ? free(node->value) : NULL;
+		node->key ? free(node->key) : NULL;
+		node ? free(node) : NULL;
 		return (0);
+	}
 
 	node->value = str_cpy(node->value, value);
 	node->key = str_cpy(node->key, key);
@@ -68,6 +73,18 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	else
 	{
+		probe = ht->array[index_key];
+		while (probe)
+		{
+			if (strcmp(probe->value, value) == 0)
+			{
+				free(node->key);
+				free(node->value);
+				free(node);
+				return (0);
+			}
+			probe = probe->next;
+		}
 		node->next = ht->array[index_key];
 		ht->array[index_key] = node;
 	}
