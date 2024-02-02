@@ -13,6 +13,8 @@ int main(void)
 
 	ht = hash_table_create(1024);
 	hash_table_set(ht, "lmao", "cool");
+	hash_table_set(ht, "", "empty_key");
+	hash_table_set(ht, "empty_value", "");
 	hash_table_set(ht, "stylist", "haircut");
 	hash_table_set(ht, "beta", "juice");
 	hash_table_set(ht, "subgenera", "vice");

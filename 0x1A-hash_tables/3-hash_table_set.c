@@ -56,8 +56,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	node->value = malloc(sizeof(char) * str_len(value) + 1);
 	node->key = malloc(sizeof(char) * str_len(key) + 1);
 
-	if (strcmp(key, "") == 0 || !ht || !node ||
-		!node->value || !node->key || !key)
+	if (strcmp(key, "") == 0 || !ht || !node || !node->value || !node->key)
 	{
 		free(node->value);
 		free(node->key);
@@ -76,7 +75,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		probe = ht->array[index_key];
 		while (probe)
 		{
-			if (strcmp(probe->value, value) == 0)
+			if (strcmp(probe->value, value) == 0 && strcmp(probe->key, key))
 			{
 				free(node->key);
 				free(node->value);
