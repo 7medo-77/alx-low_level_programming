@@ -59,10 +59,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 
 	node->value = str_cpy(node->value, value);
-	if (!ht->array[index_key]->next)
+	if (!ht->array[index_key])
 	{
+		ht->array[index_key] = node;
 		node->next = NULL;
-		ht->array[index_key]->next = node;
 	}
 	else
 	{
@@ -70,5 +70,4 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		ht->array[index_key]->next = node;
 	}
 	return (1);
-
 }
