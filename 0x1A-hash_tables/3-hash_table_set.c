@@ -56,7 +56,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	node->value = malloc(sizeof(char) * str_len(value) + 1);
 	node->key = malloc(sizeof(char) * str_len(key) + 1);
 
-	if (!key || !ht || !node || !node->value || !node->key)
+	if (key == NULL || !ht || !node || !node->value || !node->key)
 	{
 		node->value ? free(node->value) : NULL;
 		node->key ? free(node->key) : NULL;
