@@ -4,8 +4,6 @@
  *
  * @ht: Pointer to the hash table struct
  *
- * Return: Key that is being searched
- *		   NULL on FAILURE
  */
 void hash_table_print(const hash_table_t *ht)
 {
