@@ -21,6 +21,7 @@ void hash_table_delete(hash_table_t *ht)
 			probe = probe->next;
 			free(temp);
 		}
+		free(ht->array[index]);
 	}
 	free(ht->array);
 }
