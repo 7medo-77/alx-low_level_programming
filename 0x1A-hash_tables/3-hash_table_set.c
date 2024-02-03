@@ -78,6 +78,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 				free(probe->value);
 				probe->value = malloc(sizeof(char) * str_len(value) + 1);
 				probe->value = str_cpy(probe->value, value);
+				free(node->value);
+				free(node->key);
+				free(node);
 				return (1);
 			}
 			probe = probe->next;
