@@ -3,7 +3,7 @@ OBJ = $(SRC:%.c=%.o)
 NAME = school
 CC = gcc
 RM = rm -rf
-# TEMP = $(wildcard *.swap *.emacs.bak)
+TEMP = $(wildcard *.swap *.emacs.bak)
 
 all: $(OBJ) $(SRC)
 	$(CC) $(SRC) -o $(NAME)
