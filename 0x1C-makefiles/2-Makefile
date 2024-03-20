@@ -1,7 +1,10 @@
 SRC = school.c main.c
-OBJ = $(SRC:%.c=%)
+OBJ = $(SRC:%.c=%.o)
 NAME = school
 CC = gcc
 
-all: $(SRC)
+all: $(OBJ) $(SRC)
 	$(CC) $(SRC) -o $(NAME)
+
+.PHONY: clean
+clean: rm -rf $(OBJ)
