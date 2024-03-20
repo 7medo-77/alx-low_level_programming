@@ -1,0 +1,19 @@
+SRC = school.c main.c
+OBJ = $(SRC:%.c=%.o)
+NAME = school
+CC = gcc
+RM = rm -rf
+TEMP = $(wildcard *.swap *.emacs.bak)
+
+all: $(OBJ) $(SRC)
+	$(CC) $(SRC) -o $(NAME)
+
+.PHONY: clean oclean fclean
+clean:
+	$(RM) $(TEMP) $(NAME)
+
+oclean:
+	$(RM) $(OBJ)
+
+fclean:
+	$(RM) $(TEMP) $(NAME) $(OBJ)
