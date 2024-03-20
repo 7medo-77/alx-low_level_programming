@@ -1,7 +1,7 @@
-SRC = $(wildcard *.c)
+SRC = school.c main.c
 OBJ = $(SRC:%.c=%)
 NAME = school
 CC = gcc
 
 all: $(SRC)
-	$(CC) $< -o $(NAME)
+	$(CC) $(SRC) -o $(NAME)
