@@ -3,6 +3,7 @@ OBJ = $(SRC:%.c=%.o)
 NAME = school
 CC = gcc
 RM = rm -rf
+TEMP = $(wildcard *.swap *.emacs.bak)
 
 all: comp
 
@@ -11,12 +12,12 @@ comp: $(OBJ) $(SRC)
 
 .PHONY: clean oclean fclean re
 clean:
-	$(RM) *.swap *.emacs.bak $(NAME)
+	$(RM) $(TEMP) $(NAME)
 
 oclean:
 	$(RM) $(OBJ)
 
-fclean: clean oclean
+fclean:
+	$(RM) $(TEMP) $(NAME) $(OBJ)
 
-re: 
-	touch $(NAME).c
+re: oclean all
