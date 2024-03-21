@@ -10,18 +10,15 @@ all: comp
 comp: $(OBJ) $(SRC)
 	$(CC) $(SRC) -o $(NAME)
 
-.PHONY: clean
+.PHONY: clean oclean fclean re
 clean:
 	$(RM) $(TEMP) $(NAME)
 
-.PHONY: oclean
 oclean:
 	$(RM) $(OBJ)
 
-.PHONY: fclean
 fclean:
 	$(RM) $(TEMP) $(NAME) $(OBJ)
 
-.PHONY: re
 re: 
-	touch $(NAME).txt
+	touch $(NAME).c

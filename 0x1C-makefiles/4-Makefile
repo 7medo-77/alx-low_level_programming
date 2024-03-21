@@ -1,27 +1,25 @@
-# SRC = school.c main.c
-# OBJ = $(SRC:%.c=%.o)
-# NAME = school
-# CC = gcc
-# RM = rm -rf
-# TEMP = $(wildcard *.swap *.emacs.bak)
-#
-# all: comp
-#
-# comp: $(OBJ) $(SRC)
-# 	$(CC) $(SRC) -o $(NAME)
-#
-# .PHONY: clean
-# clean:
-# 	$(RM) $(TEMP) $(NAME)
-#
-# .PHONY: oclean
-# oclean:
-# 	$(RM) $(OBJ)
-#
-# .PHONY: fclean
-# fclean:
-# 	$(RM) $(TEMP) $(NAME) $(OBJ)
-#
-# .PHONY: re
-# re: 
-# 	touch $(NAME).txt
+SRC = school.c main.c
+OBJ = $(SRC:%.c=%.o)
+NAME = school
+CC = gcc
+RM = rm -rf
+CFLAGS = -Wall -Werror -Wextra -pedantic
+TEMP = $(wildcard *.swap *.emacs.bak)
+
+all: comp
+
+comp: $(OBJ) $(SRC)
+	$(CC) $(SRC) $(CFLAGS) -o $(NAME)
+
+.PHONY: clean oclean fclean re
+clean:
+	$(RM) $(TEMP) $(NAME)
+
+oclean:
+	$(RM) $(OBJ)
+
+fclean:
+	$(RM) $(TEMP) $(NAME) $(OBJ)
+
+re: 
+	touch $(NAME).c
