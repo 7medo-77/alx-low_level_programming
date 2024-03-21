@@ -21,5 +21,4 @@ oclean:
 fclean:
 	$(RM) $(TEMP) $(NAME) $(OBJ)
 
-re: 
-	touch $(NAME).c
+re: oclean all
