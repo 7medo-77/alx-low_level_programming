@@ -3,7 +3,9 @@ OBJ = $(SRC:%.c=%.o)
 NAME = school
 CC = gcc
 
-all: $(OBJ) $(SRC)
+all: comp
+
+comp: $(OBJ) $(SRC)
 	$(CC) $(SRC) -o $(NAME)
 
 .PHONY: clean

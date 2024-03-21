@@ -5,10 +5,12 @@ CC = gcc
 RM = rm -rf
 TEMP = $(wildcard *.swap *.emacs.bak)
 
-all: $(OBJ) $(SRC)
+all: comp
+
+comp: $(OBJ) $(SRC)
 	$(CC) $(SRC) -o $(NAME)
 
-.PHONY: clean oclean fclean
+.PHONY: clean oclean fclean re
 clean:
 	$(RM) $(TEMP) $(NAME)
 
@@ -17,3 +19,6 @@ oclean:
 
 fclean:
 	$(RM) $(TEMP) $(NAME) $(OBJ)
+
+re: 
+	touch $(NAME).txt
