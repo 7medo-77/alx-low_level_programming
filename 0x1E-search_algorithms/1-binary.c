@@ -33,8 +33,10 @@ int binary_search(int *array, size_t size, int value)
 {
 	size_t left, right, mid;
 
-	left = 0;
-	right = size - 1;
+	if (!array)
+		return (-1);
+
+	left = 0, right = size - 1;
 	while (left <= right)
 	{
 		array_printer(array, left, right);
