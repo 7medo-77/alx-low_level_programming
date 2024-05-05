@@ -1,7 +1,8 @@
 #include <search.h>
 #include <stdio.h>
 /**
- * linear_search - A function that returns the key index from a key string
+ * linear_search - A function that returns the index
+ *				   for a search result in an array
  *
  * @array: Array to search in
  * @size: Size of the array
