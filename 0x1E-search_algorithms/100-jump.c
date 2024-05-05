@@ -1,22 +1,6 @@
 #include <search.h>
-/**
- * array_printer - A function that prints all the values from
- *				   lower to upper bound in the sub-array
- *
- * @array: Array to search in
- * @left: Lower bound of the array
- * @right: Upper bound of the array
- *
- */
-void array_printer(int *array, size_t left, size_t right)
-{
-	size_t l = left;
-
-	printf("Searching in array: ");
-	for (; l <= right; l++)
-		printf("%d%s", array[l], l == right ? "\n" : ", ");
-}
-
+#include <stdio.h>
+#include <math.h>
 /**
  * jump_search - A function that returns the index of a value
  *				   to look for in an array, using binary searching algorithm
@@ -34,6 +18,35 @@ int jump_search(int *array, size_t size, int value)
 	increment = sqrt(size);
 	hopper_low = 0, hopper_high = 0 + increment;
 
-	for (; j)
-}
+	if (!array || size == 0)
+		return (-1);
 
+	for (; hopper_low < size; hopper_low += increment, hopper_high += increment)
+	{
+		printf("Value checked array[%lu] = [%d]\n", hopper_low, array[hopper_low]);
+		if (hopper_high < size)
+		{
+			if (value >= array[hopper_low] && value <= array[hopper_high])
+			{
+				printf("Value found between indexes [%lu] and [%lu]\n", hopper_low, hopper_high);
+				for (; hopper_low <= hopper_high; hopper_low++)
+				{
+					printf("Value checked array[%lu] = [%d]\n", hopper_low, array[hopper_low]);
+					if (array[hopper_low] == value)
+						return (hopper_low);
+				}
+			}
+		}
+		else if (hopper_high > size && array[hopper_low] < value)
+		{
+			printf("Value found between indexes [%lu] and [%lu]\n", hopper_low, hopper_high);
+			for (; hopper_low < size; hopper_low++)
+			{
+				printf("Value checked array[%lu] = [%d]\n", hopper_low, array[hopper_low]);
+				if (array[hopper_low] == value)
+					return (hopper_low);
+			}
+		}
+	}
+	return (-1);
+}
