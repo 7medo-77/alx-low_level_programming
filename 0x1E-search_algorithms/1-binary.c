@@ -1,6 +1,5 @@
-#include <search.h>
+#include "search_algos.h"
 #include <stdio.h>
-
 /**
  * array_printer - A function that prints all the values from
  *				   lower to upper bound in the sub-array

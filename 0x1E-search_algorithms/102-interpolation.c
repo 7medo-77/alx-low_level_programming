@@ -1,6 +1,4 @@
-#include <search.h>
-#include <stdio.h>
-#include <math.h>
+#include "search_algos.h"
 /**
  * interpolation_search - A function that returns the index of a value
  *				   to look for in an array, using binary searching algorithm
