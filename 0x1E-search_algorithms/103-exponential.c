@@ -1,22 +1,53 @@
 #include "search_algos.h"
 /**
- * array_builder - A function that returns the index of a value
+ * array_printer - A function that prints all the values from
+ *				   lower to upper bound in the sub-array
+ *
+ * @array: Array to search in
+ * @left: Lower bound of the array
+ * @right: Upper bound of the array
+ *
+ */
+void array_printer(int *array, size_t left, size_t right)
+{
+	size_t l = left;
+
+	printf("Searching in array: ");
+	for (; l <= right; l++)
+		printf("%d%s", array[l], l == right ? "\n" : ", ");
+}
+
+/**
+ * binary_search_embed - A function that returns the index of a value
  *				   to look for in an array, using binary searching algorithm
  *
  * @array: Array to search in
- * @size: Size of the array
- * @index: Value to look for in the array
+ * @left: first element in the array
+ * @right: last element of the array
+ * @value: Value to look for in the array
  *
  * Return: Array of integers for binary search
  */
-int *array_builder(int *array, size_t size, size_t index)
+int binary_search_embed(int *array, size_t left, size_t right,
+						int value)
 {
-	int *array_res = malloc(sizeof(int) * size);
-	size_t i = 0, iter = index;
+	size_t mid;
 
-	while (array[iter])
-		array_res[i++] = array[iter++];
-	return (array_res);
+	if (!array)
+		return (-1);
+
+	while (left <= right)
+	{
+		array_printer(array, left, right);
+		mid = left + (right - left) / 2;
+		if (array[mid] == value)
+			return (mid);
+		else if (array[mid] > value)
+			right = mid - 1;
+		else if (array[mid] < value)
+			left = mid + 1;
+	}
+	return (-1);
 }
 
 /**
@@ -31,8 +62,7 @@ int *array_builder(int *array, size_t size, size_t index)
  */
 int exponential_search(int *array, size_t size, int value)
 {
-	size_t index = 1, res_index = 0, range;
-	int *array_product;
+	size_t index = 1, res_index = 0, left = 0, right = 0;
 
 	while (index <= size - 1)
 	{
@@ -47,19 +77,16 @@ int exponential_search(int *array, size_t size, int value)
 			return (index);
 		}
 		else if ((value > array[index] && value < array[index * 2]) ||
-				(value > array[index] && value < array[size - 1]
-				&& index * 2 > size - 1))
+				(value > array[index] && index * 2 > size - 1))
 		{
+			left = index;
 			if ((index * 2) >= size)
-				range = ((size) - index);
+				right = size - 1;
 			else
-				range = index + 1;
+				right = index * 2;
 			printf("Value found between [%lu] and [%lu]\n",
 					index, index * 2 > size - 1 ? size - 1 : index * 2);
-			array_product = array_builder(array, range, index);
-			res_index = binary_search(array_product, range, value);
-			res_index += index;
-			free(array_product);
+			res_index = binary_search_embed(array, left, right, value);
 			return (res_index);
 		}
 		else
